@@ -1,0 +1,131 @@
+@font-face {
+  font-family: "Agustina Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Agustina Regular"),
+    url("./assets/fonts/Agustina.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("./assets/fonts/Montserrat-Regular.ttf") format("woff");
+  font-display: swap;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* Media Query */
+@media (max-width: 1380px) {
+  html,
+  body {
+    font-size: rem;
+    line-height: normal;
+  }
+}
+
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  max-width: calc(100% - 100px);
+}
+
+.slider-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+  
+  &:hover {
+    background: #e0e0e0;
+    transform: scale(1.1);
+  }
+  
+  &.dark-mode {
+    background: #333;
+    
+    &:hover {
+      background: #444;
+    }
+  }
+  
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+    
+    &.active {
+      background: #007bff;
+      width: 12px;
+      height: 12px;
+    }
+    
+    &.dark-mode {
+      background: #555;
+      
+      &.active {
+        background: #6c63ff;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    max-width: calc(100% - 70px);
+  }
+  
+  .slider-button {
+    width: 30px;
+    height: 30px;
+  }
+}
